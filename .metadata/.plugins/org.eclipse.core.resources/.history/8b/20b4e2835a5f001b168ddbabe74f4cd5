@@ -1,0 +1,40 @@
+package com.infopine.ItemMasterRequirements.entity;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name=" t_itemmaster")
+public class Item {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id" , unique = true,length =5 )
+	private Integer id;
+	@Column(name="name",length = 100)
+	private String name;
+	@Column(name="sku",length = 100)
+	private String sku;
+	@Column(name="lastModifiedDate")
+	private Date lastModifiedDate;
+	@Column(name="lastModifiedBy",length = 5)
+	private Integer lastModifiedBy;
+	@Column(name="type",length = 5)
+	private Integer itemType;
+	@Column(name="status",length = 2)
+	private Integer status;
+	@Column(name="filler1",length = 200)
+	private String filler1;
+	@Column(name="filler2",length = 200)
+	private String filler2;
+	@Column(name="filler3",length = 200)
+	private String filler3;
+}
